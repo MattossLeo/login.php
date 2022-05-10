@@ -8,6 +8,9 @@ session_start();
     <title>CRUD-Criar</title>
 </head>
 <body>
+<a href="teste.php">Cadastrar</a>
+<br>
+<a href="teste04.php">Listar</a>
 <h1>Cadastrar Usuário</h1>
 <?php
 if (isset( $_SESSION['msg']))
