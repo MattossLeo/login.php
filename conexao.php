@@ -15,34 +15,82 @@ if ($mysqli -> connect_errno){
 }else{
     echo "Conexao realizada com sucesso!!";
 }
-//Recebendo dados do cadastro
+
+
+
 $mail = $_POST['email'];
 $password =md5($_POST['password']);
 $username = $_POST['username'];
 $birthday = $_POST['birthday'];
 
 
-//listagem de dados
-$consulta = "SELECT * FROM cadastro";
-$con = $mysqli->query($consulta) or die($mysqli->error);
-$dado = $con->fetch_array();
-$inserir = "insert cadastro(username, email, password, birthday) value ('$username', '$mail', '$password', '$birthday')";
-$query = "SELECT * FROM cadastro  WHERE email = '$mail' AND  username = '$username' ";
-$consulta = $mysqli->query($query);
-while ($res = $consulta->fetch_array()) {
-    echo "<pre>";
-    print_r($res);
-    echo "<pre>";
 
-    if($consulta == true){
-        echo "<script> alert('Voce ja possui login com esse email.')</script>";
+$consulta = "SELECT * FROM cadastro where email = '$mail'";
+$con = $mysqli->query($consulta) or die($mysqli->error);
+while ($res = $con->fetch_array()) {
+    $validate = true;
+
+}
+
+if($validate == true){
+    echo "</br> este esmail ja esta cadastrado!";
+}else{
+    echo "</br>  vamosa cadastrar este e-mail agora !!!";
+    $inserir = "insert cadastro(username, email, password, birthday) value ('$username', '$mail', '$password', '$birthday')";
+    if (mysqli_query($mysqli, $inserir)){
+       echo "<script>alert('Cadastro realizado com exito')</script>";
+       //header("location: index.php");
+    }else{
+        echo "</br> erro ao cadastrar seu email!";
     }
 }
 
 
 
 
-// inserir dados no database
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Recebendo dados do cadastro
+//$mail = $_POST['email'];
+//$password =md5($_POST['password']);
+//$username = $_POST['username'];
+//$birthday = $_POST['birthday'];
+//
+
+//listagem de dados
+
+
+// Verificação de dados &&  inserir dados no database
+
+//$query = "SELECT * FROM cadastro  WHERE email = '$mail' AND  username = '$username' ";
+//$inserir = "insert cadastro(username, email, password, birthday) value ('$username', '$mail', '$password', '$birthday')";
+//$consulta = $mysqli->query($query);
+
+
 
 //$inserir = "insert cadastro(username, email, password, birthday) value ('$username', '$mail', '$password', '$birthday')";
 
