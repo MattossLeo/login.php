@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/*corpo*/
+body{
+   background-color: #b6b6b6;
+}
+/*Links das paginas html*/
+.cadastrar {
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 auto;
+}
+.listar{
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 auto;
+}
+.editar{
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 auto;
+}
+.links{
+    margin-bottom: 30px;
+}
