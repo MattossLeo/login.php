@@ -46,6 +46,9 @@
 
 <?php
 include('conexao.php');
+session_start();
+error_reporting(0);
+ini_set(“display_errors”, 0 );
 if(!empty($_POST['registrar'])){
 	$mail = $_POST['email'];
 	$password =md5($_POST['password']);

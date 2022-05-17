@@ -39,3 +39,24 @@ form#menuLogin{
     font-size: 0.9rem;
     text-align: center;
 }
+.alert.alert-danger {
+    position: absolute !important;
+    padding: 1rem 1rem!important;
+    margin-bottom: 1rem!important;
+    border: 1px solid transparent!important;
+    border-radius: 0.25rem!important;
+    top: 145px!important;
+    left: 50%!important;
+    transform: translateX(-50%)!important;
+    width: 25%!important;
+    text-align: center!important;
+}
+
+.alert-danger {
+    color: #fffdfd  !important;
+    background-color: #ef1b2e !important;
+    border-color: #f54353 !important;
+    width: 30% !important;
+    display: flex !important;
+    justify-content: center !important;
+}
