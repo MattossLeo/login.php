@@ -1,24 +1,12 @@
 @charset "UTF-8";
 /*corpo*/
 body{
-    background-color: #b6b6b6 !important;
+    background-color: #b9b9b9 !important;
 }
-/*Links das paginas html*/
-.cadastrar {
-    text-decoration: none;
-    padding: 10px;
-    margin: 0 auto;
+/*Titulo*/
+h1.titulo{
+    text-align: center;
 }
-.listar{
-    text-decoration: none;
-    padding: 10px;
-    margin: 0 auto;
-}
-.editar{
-    text-decoration: none;
-    padding: 10px;
-    margin: 0 auto;
-}
-.links{
-    margin-bottom: 30px;
-}
+/*links*/
+
+/*editar*/

@@ -27,7 +27,7 @@ $row = mysqli_num_rows($result);
 
 if ( $row == 1 ) {
 	$_SESSION['email'] = $mail;
-	header('Location: create.php');
+	header('Location: listar.php');
 }
 else {
 	$_SESSION['usuario_invalido'] = true;

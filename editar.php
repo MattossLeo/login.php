@@ -12,21 +12,24 @@ session_start();
 </head>
 <body>
 <section class="cadastro">
-    <div class="container">
-        <div class="links">
-            <a class="cadastrar" href="create.php">Cadastrar</a>
-            <a class="listar" href="listar.php">Listar</a>
-            <a class="editar" href="editar.php">Editar</a>
-        </div>
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Menu
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdown">
+            <li><a class="dropdown-item" href="painel.php">Minha Conta</a></li>
+            <li><a class="dropdown-item" href="listar.php">Listar</a></li>
+            <li><a class="dropdown-item" href="editar.php">Editar</a></li>
+        </ul>
     </div>
 </section>
-<h1>Editar Usuário</h1>
+<h1 class="titulo">Editar Usuário</h1>
 <?php
 if (isset( $_SESSION['msg']))
     echo  $_SESSION['msg'];
 unset($_SESSION['msg']);
 ?>
-<form method="post" action="process.php">
+<form class="editar" method="post" action="process.php">
     <label>Nome:</label>
     <input type="text" name="nome" placeholder="Seu nome...">
     </br></br>

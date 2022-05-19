@@ -13,12 +13,15 @@ include("conexao.php");
 </head>
 <body>
 <section class="cadastro">
-    <div class="container">
-        <div class="links">
-            <a class="cadastrar" href="create.php">Cadastrar</a>
-            <a class="listar" href="listar.php">Listar</a>
-            <a class="editar" href="editar.php">Editar</a>
-        </div>
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Menu
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdown">
+            <li><a class="dropdown-item" href="painel.php">Minha Conta</a></li>
+            <li><a class="dropdown-item" href="listar.php">Listar</a></li>
+            <li><a class="dropdown-item" href="editar.php">Editar</a></li>
+        </ul>
     </div>
 </section>
 <h1>Listar Usuário</h1>
@@ -33,7 +36,7 @@ $pagina_atual = filter_input(INPUT_GET, 'pagina', FILTER_SANITIZE_NUMBER_INT);
 
 $pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
 
-$qnt_result_pg =2;
+$qnt_result_pg =4;
 
 $inicio = ($qnt_result_pg * $pagina)- $qnt_result_pg;
 ?>
@@ -43,20 +46,22 @@ $inicio = ($qnt_result_pg * $pagina)- $qnt_result_pg;
         <th scope="col">#</th>
         <th scope="col">Nome</th>
         <th scope="col">Email</th>
+        <th scope="col">Aniversario</th>
     </tr>
     </thead>
     <tbody>
 <?php
 //EXIBIR A LISTAGEM
-$result = "SELECT * FROM teste LIMIT $inicio, $qnt_result_pg";
+$result = "SELECT * FROM cadastro LIMIT $inicio, $qnt_result_pg";
 
 $resultado = mysqli_query($mysqli, $result);
 while($row_user = mysqli_fetch_assoc($resultado)){
 ?>
     <tr>
         <th scope="row"><?php echo $row_user['id']; ?></th>
-        <td><?php echo $row_user['nome']; ?></td>
+        <td><?php echo $row_user['username']; ?></td>
         <td><?php echo $row_user['email']; ?></td>
+        <td><?php echo $row_user['birthday']; ?></td>
 
     </tr>
 <?php
@@ -70,7 +75,7 @@ while($row_user = mysqli_fetch_assoc($resultado)){
 <?php
 
 //QUANTIDADE DE PAGINAS
-$result_pg = "SELECT COUNT(id) AS num_result FROM teste";
+$result_pg = "SELECT COUNT(id) AS num_result FROM cadastro";
 $resultado_pg = mysqli_query($mysqli, $result_pg);
 $row_pg = mysqli_fetch_assoc($resultado_pg);
 $quantidade_pg = ceil($row_pg['num_result'] / $qnt_result_pg);
