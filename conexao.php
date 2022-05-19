@@ -4,14 +4,14 @@
 $host = "localhost";
 $usuario = "root";
 $senha ="";
-$bd ="cadastro";
+$bd ="te03ste";
 
 //conexao com o banco de dados
 
 $mysqli = new mysqli($host, $usuario, $senha, $bd);
-
 if ($mysqli -> connect_errno){
     echo "Falha na conexão: (".$mysqli->connect_errno.") ".$mysqli->connect_error;
+<<<<<<< HEAD
 }
 
 //Cadastro do usuario
@@ -43,3 +43,6 @@ if ($mysqli -> connect_errno){
 //}else{
 //    echo "erro";
 //}
+=======
+}else{}
+>>>>>>> 906b3e10848263ec6c87cb395e1c2fa9e2814995

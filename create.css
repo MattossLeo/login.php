@@ -1,18 +1,7 @@
 @charset "UTF-8";
 /*corpo*/
 body{
-<<<<<<< HEAD
-    background-color: #b9b9b9 !important;
-}
-/*Titulo*/
-h1.titulo{
-    text-align: center;
-}
-/*links*/
-
-/*editar*/
-=======
-    background-color: #b6b6b6 !important;
+   background-color: #b6b6b6;
 }
 /*Links das paginas html*/
 .cadastrar {
@@ -33,4 +22,3 @@ h1.titulo{
 .links{
     margin-bottom: 30px;
 }
->>>>>>> 906b3e10848263ec6c87cb395e1c2fa9e2814995
